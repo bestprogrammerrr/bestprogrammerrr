@@ -1,34 +1,50 @@
 # Adaptive FPS (Fabric, Minecraft 1.21.1)
 
-This is a **client-side optimization mod** designed to smooth frame drops by dynamically reducing expensive rendering work.
+A lightweight **client-side optimization mod** to reduce frame drops by dynamically lowering expensive visual work when FPS falls.
 
-## What it does
+## ✅ Fast download (no Java/Gradle install needed)
 
-- Samples your current FPS once per second.
-- Automatically lowers particle intensity and entity distance when FPS dips.
-- If FPS gets critically low, also reduces simulation and render distance caps.
-- Drops some newly spawned particles while FPS is low to prevent stutter spikes.
+If you just want the mod file, do this:
 
-## Target version
+1. Open this repo on GitHub.
+2. Click **Releases**.
+3. Open the latest release.
+4. Download the `.jar` from **Assets**.
+5. Put the `.jar` in your Minecraft `mods/` folder.
 
-- Minecraft **1.21.1** (often confused with “1.21.11”).
+That’s it — no local build tools required.
+
+## Alternative: Download from GitHub Actions artifact
+
+If a release is not published yet:
+
+1. Open the **Actions** tab in GitHub.
+2. Open the latest successful **Build Mod Jar** run.
+3. Download `adaptive-fps-jar` artifact.
+4. Extract it and use the `.jar` inside.
+
+## What the mod does
+
+- Samples FPS every second.
+- Lowers particle amount and entity distance when FPS dips.
+- At critical FPS, also caps simulation/view distance.
+- Culls a percentage of new particles under lag.
+
+## Minecraft/Fabric version
+
+- Minecraft **1.21.1**
 - Fabric Loader 0.16+
-
-## Build
-
-```bash
-./gradlew build
-```
-
-Built jar will be in `build/libs/`.
 
 ## Install
 
-1. Install Fabric Loader for 1.21.1.
-2. Put the built jar in your `mods/` folder.
+1. Install Fabric Loader for Minecraft 1.21.1.
+2. Put the downloaded `adaptive-fps` `.jar` into `mods/`.
 3. Launch the game.
 
-## Notes
+## For developers (optional local build)
 
-- This mod is intentionally lightweight.
-- It should pair well with Sodium, Lithium, and FerriteCore.
+```bash
+gradle build
+```
+
+Output jar: `build/libs/`
