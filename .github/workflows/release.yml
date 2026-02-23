@@ -22,9 +22,13 @@ jobs:
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.10.2
 
       - name: Build
-        run: gradle build --no-daemon
+        run: |
+          gradle --version
+          gradle build --no-daemon --stacktrace
 
       - name: Upload release assets
         uses: softprops/action-gh-release@v2
