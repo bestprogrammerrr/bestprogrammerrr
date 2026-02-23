@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "com.bestprogrammerrr.adaptivefps.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ClientWorldParticleMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
