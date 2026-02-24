@@ -25,6 +25,11 @@ public abstract class ClientWorldParticleMixin {
         double velocityZ,
         CallbackInfo ci
     ) {
+        if (AdaptivePerformanceController.shouldDropNonEssentialParticle(parameters)) {
+            ci.cancel();
+            return;
+        }
+
         if (AdaptivePerformanceController.shouldCullParticle()) {
             ci.cancel();
         }

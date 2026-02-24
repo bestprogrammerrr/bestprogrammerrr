@@ -48,3 +48,26 @@ gradle build
 ```
 
 Output jar: `build/libs/`
+
+## PC tweak utility (for whole PC, not Minecraft-only)
+
+If you want a quick system tweak for high-usage apps and lower input delay on Linux, use:
+
+```bash
+bash tools/pc_tweak.sh
+```
+
+- Default mode is **dry-run** (shows what would be terminated).
+- To actually terminate high-usage non-essential apps:
+
+```bash
+bash tools/pc_tweak.sh --apply
+```
+
+- To also apply low-latency input tweaks:
+
+```bash
+bash tools/pc_tweak.sh --apply --input-tweaks
+```
+
+You can customize kill candidates with `SAFE_KILL_APPS` and thresholds with `--cpu` / `--mem`.
